@@ -8,7 +8,7 @@ const HeaderHolder = styled.header`
   justify-content: space-between;
   width: 100vw;
   background-color: var(--main-background-color);
-  border-bottom: 2.5rem solid #353535;
+  border-bottom: 3.5rem solid #353535;
 `;
 
 const Deparments = styled.a`
@@ -16,10 +16,11 @@ const Deparments = styled.a`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 15rem;
-  font-size: 1rem;
+  width: 20rem;
+  font-size: 1.4rem;
   cursor: pointer;
   white-space: pre;
+  height: 6rem;
 
   &:hover {
     background-color: #353535;
@@ -32,8 +33,8 @@ const Deparments = styled.a`
   & svg {
     border-radius: 50px;
     background-color: #f0be1b;
-    padding: 0.2rem;
-    font-size: 2rem;
+    padding: 0.4rem;
+    font-size: 2.4rem;
   }
 
   & span {

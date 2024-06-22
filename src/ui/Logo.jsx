@@ -12,7 +12,7 @@ const StyledLogo = styled.a`
 `;
 
 const Img = styled.img`
-  width: 3.5rem;
+  width: 4.5rem;
 `;
 
 function Logo() {
