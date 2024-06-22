@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Header from "./Header";
 
 const StyledAppLayout = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Container = styled.div`
 function AppLayout() {
   return (
     <StyledAppLayout>
-      {/* Header */}
+      <Header />
       <Main>
         <Container>{/* Outlet */}</Container>
       </Main>
