@@ -3,82 +3,84 @@ import { createGlobalStyle } from "styled-components";
 const styled = { createGlobalStyle };
 const GlobalStyles = styled.createGlobalStyle`
   :root {
-    &,
-    
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    & {
+      --main-background-color: #f9fafb;
+    }
 
-    /* Creating animations for dark mode */
-    transition: background-color 0.3s, border 0.3s;
-  }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
 
-  html {
-    font-size: 62.5%;
-  }
+      /* Creating animations for dark mode */
+      transition: background-color 0.3s, border 0.3s;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
+    html {
+      font-size: 62.5%;
+    }
 
-    transition: color 0.3s, background-color 0.3s;
-    min-height: 100vh;
-    line-height: 1.5;
-    font-size: 1.6rem;
-  }
+    body {
+      font-family: "Roboto", sans-serif;
 
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-    color: inherit;
-  }
+      transition: color 0.3s, background-color 0.3s;
+      min-height: 100vh;
+      line-height: 1.5;
+      font-size: 1.6rem;
+    }
 
-  button {
-    cursor: pointer;
-  }
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+      color: inherit;
+    }
 
-  *:disabled {
-    cursor: not-allowed;
-  }
+    button {
+      cursor: pointer;
+    }
 
+    *:disabled {
+      cursor: not-allowed;
+    }
 
-  input:focus,
-  button:focus,
-  textarea:focus,
-  select:focus {
-    outline-offset: -1px;
-  }
+    input:focus,
+    button:focus,
+    textarea:focus,
+    select:focus {
+      outline-offset: -1px;
+    }
 
-  button:has(svg) {
-    line-height: 0;
-  }
+    button:has(svg) {
+      line-height: 0;
+    }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  ul {
-    list-style: none;
-  }
+    ul {
+      list-style: none;
+    }
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
 
-  img {
-    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
