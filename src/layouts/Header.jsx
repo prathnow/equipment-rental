@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "../src/ui/Logo";
+import Logo from "../ui/Logo";
 import { MdLocationOn } from "react-icons/md";
 
 const HeaderHolder = styled.header`
