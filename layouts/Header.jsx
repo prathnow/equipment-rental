@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../src/ui/Logo";
+import { MdLocationOn } from "react-icons/md";
 
 const HeaderHolder = styled.header`
   display: flex;
@@ -23,6 +24,16 @@ const Deparments = styled.a`
   &:hover {
     background-color: #353535;
     color: #fff;
+    & svg {
+      color: #000;
+    }
+  }
+
+  & svg {
+    border-radius: 50px;
+    background-color: #f0be1b;
+    padding: 0.2rem;
+    font-size: 2rem;
   }
 
   & span {
@@ -36,7 +47,7 @@ function Header() {
       {/* Burger Menu */}
       <Logo />
       <Deparments>
-        Nasze <span>oddziały</span>
+        <MdLocationOn /> Nasze <span>oddziały</span>
       </Deparments>
     </HeaderHolder>
   );
