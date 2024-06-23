@@ -5,7 +5,40 @@ const GlobalStyles = styled.createGlobalStyle`
   :root {
     & {
       --main-background-color: #f9fafb;
+      --color-brand-1: #353535;
+
+      --color-text-1: #000;
+      --color-text-2: #fff;
+      --color-text-3: #353535;
+
+      --color-yellow-100: #fef9c3;
+      --color-yellow-200: #fef08a;
+      --color-yellow-300: #fde047;
+      --color-yellow-400: #facc15;
+      --color-yellow-500: #eab308;
+      --color-yellow-600: #ca8a04;
+      --color-yellow-700: #a16207;
+      --color-yellow-800: #854d0e;
+      --color-yellow-900: #713f12;
+
+      --color-sky-100: #e0f2fe;
+      --color-sky-200: #bae6fd;
+      --color-sky-300: #7dd3fc;
+      --color-sky-400: #38bdf8;
+      --color-sky-500: #0ea5e9;
+      --color-sky-600: #0284c7;
+      --color-sky-700: #0369a1;
+      --color-sky-800: #075985;
+      --color-sky-900: #0c4a6e;
+
+      --color-red-700: #b91c1c;
+      --color-red-800: #991b1b;
     }
+
+    --border-radius-tiny: 3px;
+    --border-radius-sm: 5px;
+    --border-radius-md: 7px;
+    --border-radius-lg: 9px;
   }
 
   *,
