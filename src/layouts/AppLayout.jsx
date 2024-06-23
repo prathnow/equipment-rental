@@ -10,7 +10,6 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   background-color: var(--main-background-color);
-  padding: 4rem 4.8rem 6rem;
 `;
 
 const Container = styled.div`
