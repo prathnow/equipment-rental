@@ -45,7 +45,7 @@ function HomeSearchBar() {
         <StyledInput placeholder="Np. Koparka, ...." />
         <StyledButton
           $variation="search"
-          size="medium"
+          $size="medium"
         >
           Szukaj
         </StyledButton>
