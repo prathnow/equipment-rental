@@ -17,6 +17,7 @@ const Row = styled.div`
     css`
       flex-direction: column;
       gap: 1.6rem;
+      align-items: center;
     `}
 
     ${(props) =>
@@ -26,9 +27,9 @@ const Row = styled.div`
     `}
 
     ${(props) =>
-    props.bgColor !== "" &&
+    props.$background !== "" &&
     css`
-      background-color: ${props.bgColor};
+      background-color: ${props.$background};
     `}
 
     ${(props) =>
