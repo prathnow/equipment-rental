@@ -6,7 +6,7 @@ const HeaderHolder = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   background-color: var(--main-background-color);
   border-bottom: 3.5rem solid #353535;
 `;
