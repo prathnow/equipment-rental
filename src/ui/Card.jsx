@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const StyledCard = styled.div`
-  flex: 1 1 calc(33.333% - 2rem);
+  flex: 0 0 30rem;
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: --shadow-md;
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -17,11 +17,11 @@ const StyledCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    flex: 1 1 calc(50% - 2rem);
+    flex: 0 0 20rem;
   }
 
   @media (max-width: 480px) {
-    flex: 1 1 100%;
+    flex: 0 0 20rem;
   }
 `;
 
