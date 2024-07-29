@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Button from "./Button";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const StyledCard = styled.div`
   flex: 0 0 30rem;
@@ -13,15 +15,15 @@ const StyledCard = styled.div`
   transition: all 0.3s;
 
   &:hover {
-    scale: 1.05;
+    scale: 1.02;
   }
 
   @media (max-width: 768px) {
-    flex: 0 0 20rem;
+    flex: 0 0 calc(100vw - 20rem);
   }
 
   @media (max-width: 480px) {
-    flex: 0 0 20rem;
+    flex: 0 0 calc(100vw - 20rem);
   }
 `;
 
@@ -51,6 +53,10 @@ const CardDescription = styled.p`
 `;
 
 function Card({ item, type = "product" }) {
+  const navigate = useNavigate();
+  const link = type === "product" ? "wynajem" : "news";
+  const linkName = item.title.split(" ").join("-").toLowerCase();
+
   return (
     <StyledCard>
       <Image
@@ -58,9 +64,18 @@ function Card({ item, type = "product" }) {
         alt={item.title}
       />
       <CardContent>
-        <CardTitle>{item.title}</CardTitle>
+        <CardTitle>
+          <Link to={`/${link}/${linkName}/${item.id}`}>{item.title}</Link>
+        </CardTitle>
         <CardDescription>{item.description}</CardDescription>
-        {type === "product" && <Button $size="small">Wynajmij</Button>}
+        {type === "product" && (
+          <Button
+            $size="small"
+            onClick={() => navigate(`/wynajem/${linkName}/${item.id}`)}
+          >
+            Wynajmij
+          </Button>
+        )}
       </CardContent>
     </StyledCard>
   );

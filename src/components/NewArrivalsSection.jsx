@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Row from "../ui/Row";
 import Card from "../ui/Card";
 import Slider from "../ui/Slider";
+import { useNewEquipments } from "../hooks/useNewEquipements";
+import Spinner from "../ui/Spinner";
 
 const Section = styled(Row)`
   padding: 0rem 8rem;
@@ -10,6 +12,11 @@ const Section = styled(Row)`
 `;
 
 function NewArrivalsSection() {
+  const { isLoading, newEquipments } = useNewEquipments();
+
+  if (isLoading) return <Spinner />;
+  console.log(newEquipments);
+
   // Example data, replace with real data
   const newArrivals = [
     {
@@ -60,7 +67,7 @@ function NewArrivalsSection() {
     <Section $background="--main-background-color">
       <Slider
         title="Nowości w ofercie"
-        data={newArrivals}
+        data={newEquipments}
         render={(item, index) => (
           <Card
             item={item}
