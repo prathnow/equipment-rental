@@ -14,3 +14,17 @@ export async function getNewEquipments() {
 
   return data;
 }
+
+export async function getEquipment(id) {
+  const { data, error } = await supabase
+    .from("equipment")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error("Error loading equipment data:", error.message);
+    throw new Error("Sorry. Equipment not found");
+  }
+  return data;
+}
