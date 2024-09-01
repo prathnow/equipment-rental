@@ -16,15 +16,43 @@ export async function getNewEquipments() {
 }
 
 export async function getEquipment(id) {
-  const { data, error } = await supabase
+  const { data: equipmentData, error: equipmentError } = await supabase
     .from("equipment")
     .select("*")
     .eq("id", id)
     .single();
 
-  if (error) {
+  if (equipmentError) {
     console.error("Error loading equipment data:", error.message);
     throw new Error("Sorry. Equipment not found");
   }
-  return data;
+
+  const { data: transitions, error: transitionsError } = await supabase
+    .from("specifications_translations")
+    .select("specification_name, specification_desc_pl");
+
+  if (transitionsError) {
+    console.error("Error loading translations");
+    throw new Error("Sorry. Translations not found");
+  }
+
+  const specifications = equipmentData.specifications;
+  console.log(specifications);
+
+  const translatedSpecifications = {};
+  for (const key in specifications) {
+    const transition = transitions.find((t) => t.specification_name === key);
+
+    if (transition) {
+      translatedSpecifications[transition.specification_desc_pl] =
+        specifications[key];
+    } else {
+      translatedSpecifications[key] = specifications[key];
+    }
+  }
+
+  return {
+    ...equipmentData,
+    specifications: translatedSpecifications,
+  };
 }
