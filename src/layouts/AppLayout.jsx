@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "./Header";
 import { Outlet } from "react-router";
+import Footer from "./Footer";
 
 const StyledAppLayout = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ function AppLayout() {
           <Outlet />
         </Container>
       </Main>
-      {/* Footer */}
+      <Footer />
     </StyledAppLayout>
   );
 }
