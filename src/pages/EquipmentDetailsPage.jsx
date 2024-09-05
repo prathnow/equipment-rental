@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useEquipment } from "../hooks/useEquipment";
 import Spinner from "../ui/Spinner";
 import Specifications from "../ui/Specifications";
+import BreadCrumb from "../ui/BreadCrumb";
 
 const DetailsPageContainer = styled(Row)`
   width: 80%;
@@ -18,10 +19,18 @@ const DetailsPageContainer = styled(Row)`
   margin: 4rem auto;
   gap: 4rem;
   justify-content: space-around;
+  position: relative;
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
+`;
+
+const StyledBreadCrumb = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 4rem;
 `;
 
 const EquipmentContainer = styled.div`
@@ -154,6 +163,9 @@ function EquipmentDetailsPage() {
       type="horizontal"
       $background="var(--color-text-2)"
     >
+      <StyledBreadCrumb>
+        <BreadCrumb>{equipment.title}</BreadCrumb>
+      </StyledBreadCrumb>
       <EquipmentContainer>
         <EquipmentImage
           src={equipment.imageUrl}
