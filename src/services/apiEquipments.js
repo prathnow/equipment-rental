@@ -23,7 +23,7 @@ export async function getEquipment(id) {
     .single();
 
   if (equipmentError) {
-    console.error("Error loading equipment data:", error.message);
+    console.error("Error loading equipment data:", equipmentError.message);
     throw new Error("Sorry. Equipment not found");
   }
 
