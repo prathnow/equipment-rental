@@ -4,6 +4,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import MainPage from "./pages/MainPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EquipmentDetailsPage from "./pages/EquipmentDetailsPage";
+import News from "./pages/News";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,10 @@ function App() {
             <Route
               path="/wynajem/:productName/:productId"
               element={<EquipmentDetailsPage />}
+            />
+            <Route
+              path="/news/:newsTitle/:newsId"
+              element={<News />}
             />
           </Route>
         </Routes>
