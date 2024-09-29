@@ -57,6 +57,10 @@ function Card({ item, type = "product" }) {
   const link = type === "product" ? "wynajem" : "news";
   const linkName = item.title.split(" ").join("-").toLowerCase();
 
+  if (type === "product" && !item.imageUrl) {
+    item.imageUrl = "src/assets/images/default-img.png";
+  }
+
   return (
     <StyledCard>
       <Image
