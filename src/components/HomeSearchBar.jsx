@@ -2,6 +2,8 @@ import { MdOutlineSearch } from "react-icons/md";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import styled from "styled-components";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const SearchHeader = styled.p`
   width: 80%;
@@ -9,7 +11,7 @@ const SearchHeader = styled.p`
   font-size: 2.2rem;
 `;
 
-const SearchContainer = styled.div`
+const SearchContainer = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,13 +38,31 @@ const StyledButton = styled(Button)`
   height: 4.8rem;
 `;
 
-function HomeSearchBar() {
+function HomeSearchBar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  function handleSearch(e) {
+    e.preventDefault();
+    if (searchTerm.length < 3) return;
+    navigate(`/results?query=${encodeURIComponent(searchTerm)}`);
+  }
+
+  function onChange(e) {
+    setSearchTerm(e.target.value);
+  }
+
   return (
     <>
       <SearchHeader>Wypożyczalnia sprzętu</SearchHeader>
-      <SearchContainer>
+      <SearchContainer onSubmit={(e) => handleSearch(e)}>
         <SearchIcon size="2.5rem" />
-        <StyledInput placeholder="Np. Koparka, ...." />
+
+        <StyledInput
+          placeholder="Np. Koparka, ...."
+          onChange={(e) => onChange(e)}
+          value={searchTerm}
+        />
         <StyledButton
           $variation="search"
           $size="medium"
